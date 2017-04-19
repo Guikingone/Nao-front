@@ -4,26 +4,22 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AppRoutingModule } from "./app-routing.modules";
 
-const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: '**', component: NotFoundComponent }
-];
 
 @NgModule({
   declarations: [
     AppComponent,
-    NotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
